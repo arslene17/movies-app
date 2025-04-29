@@ -25,7 +25,7 @@ const FilterMovie = ({
         placeholder="Filter by movie title"
         value={filterTitle}
       />
-      <div className="flex w-full items-center">
+      <div className="flex w-full items-center justify-center">
         <p className="w-full flex-1">By rate:</p>
         <Rate onChange={(e) => setFilterRate(e)} value={filterRate} className="w-full" />
       </div>

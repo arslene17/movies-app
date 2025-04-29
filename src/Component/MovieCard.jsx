@@ -1,18 +1,19 @@
 import React from "react";
 import ReactStars from "react-stars";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img className="rounded-t-lg" src={movie.posterUrl} alt="" />
-      </a>
+      <Link to={`/movie/${movie.id}`}>
+<img className="rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-110" src={movie.posterUrl} alt="" />
+      </Link>
       <div className="p-5">
-        <a href="#">
+        <Link to={`/movie/${movie.id}`}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {movie.title}
           </h5>
-        </a>
+        </Link>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {movie.description}
         </p>
@@ -26,8 +27,8 @@ const MovieCard = ({ movie }) => {
           size={24}
           color2={"#ffd700"}
         />
-        <a
-          href="#"
+        <Link
+          to={`/movie/${movie.id}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Read more
@@ -46,7 +47,7 @@ const MovieCard = ({ movie }) => {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );
